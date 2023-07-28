@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="VouchedExample">
+  <meta name="generator" content="Hugo 0.104.2">
+  <title>Vouched - Account Config</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <!-- icons-->
+
+  <style>
+    /* Custom popovers */
+    .vouched-popover {
+      /* --bs-popover-max-width: 200px; */
+      --bs-popover-border-color: #635bff;
+      --bs-popover-header-bg: #635bff;
+      --bs-popover-header-color: var(--bs-white);
+      --bs-popover-body-padding-x: 1rem;
+      --bs-popover-body-padding-y: .5rem;
+    }
+
+    /* End custom popovers */
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media print {
+
+      .no-print,
+      .no-print * {
+        display: none !important;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+      }
+
+    }
+  </style>
+
+  <!-- Tooltips -->
+
+  <script type="text/javascript">
+    function tooltips() {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    }
+  </script>
+
+  <!-- End tooltips -->
+
+  <!-- Custom styles for this template -->
+</head>
+
+<body onload="tooltips()" class="bg-light">
+
+  <div class="container">
+    <main id="topDiv">
+      <div class="py-5 text-left">
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last" id="summarySection">
+          <div id="printableSection">
+            <img id="vouhedLogo" class="d-block  mb-4" src="vouched_logo.png" dataURL="img/png" alt="vouchedLogo">
+            <h4 class="d-flex justify-content-between align-items-center mb-3 ps-1">
+              <span class="text-dark fw-bold" style="" id="summaryTitle">Summary</span>
+            </h4>
+            <h6 class="d-flex justify-content-between align-items-center mb-3 ps-1">
+              <span class="text-dark fw-bold" style="" id="printableDate"></span>
+            </h6>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Vouched Version</h6>
+                  <small class="text-muted" id="summary_version">JS Plugin</small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Theme</h6>
+                  <small class="text-muted" id="summary_theme">Verbose</small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Workflow Type</h6>
+                  <small class="text-muted" id="summary_type">ID + Selfie</small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm selfieTypeRequired">
+                <div>
+                  <h6 class="my-0">Selfie Liveness</h6>
+                  <small class="text-muted" id="summary_selfie_liveness">Mouth</small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">ID Liveness</h6>
+                  <small class="text-muted" id="summary_id_liveness">Enabled</small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between lh-sm selfieTypeRequired">
+                <div>
+                  <h6 class="my-0">Selfie Uploads</h6>
+                  <small class="text-muted" id="summary_selfie_uploads">Disabled</small>
+                </div>
+                <!-- good icon --><i id="selfieUpload_success" class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="selfieUpload_warning" style="display:none;"
+                  class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">ID Uploads</h6>
+                  <small class="text-muted" id="summary_id_uploads">Disabled</small>
+                </div>
+                <!-- good icon --><i id="idUpload_success" class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="idUpload_warning" style="display:none;"
+                  class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Barcode</h6>
+                  <small class="text-muted" id="summary_barcode">Enabled</small>
+                </div>
+                <!-- good icon --><i id="barcode_success" class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="barcode_warning" style="display:none;"
+                  class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Crosscheck</h6>
+                  <small class="text-muted" id="summary_crosscheck">Disabled</small>
+                </div>
+                <!-- good icon --><i id="crosscheck_success" style="display:none;"
+                  class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="crosscheck_warning" class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">DarkWeb</h6>
+                  <small class="text-muted" id="summary_darkweb">Disabled</small>
+                </div>
+                <!-- good icon --><i id="darkweb_success" style="display:none;"
+                  class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="darkweb_warning" class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">DLV</h6>
+                  <small class="text-muted" id="summary_dlv">Disabled</small>
+                </div>
+                <!-- good icon --><i id="dlv_success" style="display:none;"
+                  class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="dlv_warning" class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">AML</h6>
+                  <small class="text-muted" id="summary_aml">Disabled</small>
+                </div>
+                <!-- good icon --><i id="aml_success" style="display:none;"
+                  class="bi bi-check-circle-fill text-success"></i>
+                <!-- warning icon --> <i id="aml_warning" class="bi bi-pause-circle-fill text-warning"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm avantOnly"
+                style="display:none!important;">
+                <div>
+                  <h6 class="my-0">User Confirmations</h6>
+                  <small class="text-muted" id="summary_userConf">Enabled</small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm" style="">
+                <div>
+                  <h6 class="my-0">Notes</h6>
+                  <small class="text-muted" id="summary_notes"></small>
+                </div>
+                <!-- conf icon --><i style="color:green;" class="bi bi-check-circle-fill"></i>
+              </li>
+            </ul>
+          </div>
+
+          <form class="" style="" id="reviewForm">
+            <div class="">
+              <!-- <input type="text" class="form-control" id="customerName" placeholder="Customer name"> -->
+              <button onclick="review()" type="" class="btn btn-success w-100"
+                style="background-color:#635bff;">Next</button>
+
+            </div>
+          </form>
+          <div id="finalSection" style="display:none;">
+            <div class="row">
+              <div class="col-md-6">
+                <button onclick="back()" class="btn btn-danger no-print">Back</button>
+              </div>
+              <div class="col-md-6 float-right">
+                <button onclick="downloadPDF()" class="btn btn-success float-end no-print"
+                  style="background-color:#635bff;">Download PDF</button>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8" id="configSection">
+          <h4 class="mb-3">Base Configuration</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="clientName" class="form-label">Client Name <i style="color:#635bff;"
+                    class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                    data-bs-title="Client Name:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                    data-bs-custom-class="vouched-popover" data-bs-content="Enter client name here."></i> </label>
+                <input id="clientName" class="form-control" placeholder="" />
+
+              </div>
+              <div class="col-sm-6">
+                <label for="vouchedVersion" class="form-label">Vouched Version <i style="color:#635bff;"
+                    class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                    data-bs-title="Versions:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                    data-bs-custom-class="vouched-popover"
+                    data-bs-content="<strong>JS Plugin:</strong> JavaScript code added to customer's workflow. Recommended and most configurable. </br></br> <strong>Vouched Now:</strong> Our web-based interface where invites get manually sent from the Dashboard."></i>
+                </label>
+                <select class="form-select" id="vouchedVersion" required>
+                  <option value="JS Plugin">JS Plugin</option>
+                  <option value="Vouched Now">Vouched Now</option>
+                </select>
+
+              </div>
+              <div class="col-sm-6">
+                <label for="theme" class="form-label">Theme <i style="color:#635bff;" class="bi bi-question-circle-fill"
+                    data-bs-toggle="popover" data-bs-placement="top" data-bs-title="Type Options" tabindex="0"
+                    data-bs-trigger="hover" data-bs-html="true" data-bs-custom-class="vouched-popover"
+                    data-bs-content="<strong>Verbose:</strong> Our recommended default. Easiest to customize</br></br><strong>Avant:</strong> Our newer, beta theme. Required for user confirmations and reverification"></i></label>
+                <select class="form-select" id="theme" required>
+                  <option value="verbose">Verbose</option>
+                  <option value="avant">Avant</option>
+                </select>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="type" class="form-label">Type <i style="color:#635bff;" class="bi bi-question-circle-fill"
+                    data-bs-toggle="popover" data-bs-placement="top" data-bs-title="Type Options" tabindex="0"
+                    data-bs-trigger="hover" data-bs-html="true" data-bs-custom-class="vouched-popover"
+                    data-bs-content="<strong>ID + Selfie:</strong> User takes a selfie and photo of ID. </br></br> <strong>ID Only:</strong> User only takes photo of ID. No selfie.</br></br><strong>Reverification:</strong> Reverify existing users. JS plugin only."></i>
+                </label>
+                <select class="form-select" id="type" required>
+                  <option value="idv">ID + Selfie</option>
+                  <option value="id">ID Only</option>
+                  <option class="jsOnly avantOnly" value="reverification">Reverification</option>
+                </select>
+              </div>
+              <div class="row g-3">
+                <h4 class="mb-3">Liveness</h4>
+
+                <div class="col-sm-6 selfieTypeRequired">
+                  <label for="selifeLiveness" class="form-label">Selfie Liveness <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="Selfie Liveness:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover"
+                      data-bs-content="<strong>Straight:</strong> User takes a selfie and photo of ID. </br></br> <strong>Mouth:</strong> User opens and closes their mouth.</br></br><strong>Orientation:</strong> User turns their head side to side.<br /><br/><strong>Distance: </strong>User moves closer to and farther from camera."></i>
+                  </label>
+                  <select class="form-select" id="selfieLiveness" required>
+                    <option value="straight">Straight</option>
+                    <option value="mouth" selected>Mouth</option>
+                    <option value="orientation">Orientation</option>
+                    <option value="distance">Distance</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="idLiveness" class="form-label">ID Liveness <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="ID Liveness:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover"
+                      data-bs-content="<strong>Disabled:</strong> No liveness check on ID. </br></br> <strong>Enabled:</strong> User is asked to move camera closer to and farther from ID."></i>
+                  </label>
+                  <select class="form-select" id="idLiveness" required>
+                    <option value="distance">Enabled</option>
+                    <option value="">Disabled</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <h4 class="mb-3">Uploads</h4>
+
+                <div class="col-sm-6 selfieTypeRequired">
+                  <label for="selfieUploads" class="form-label">Selfie Uploads <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="Selfie Uploads:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover"
+                      data-bs-content="Allow user to upload a selfie photo instead of a live capture. We strongly recommend disabling photo uploads."></i>
+                  </label>
+                  <select class="form-select" id="selfieUploads" required>
+                    <option value="both">Enabled</option>
+                    <option value="camera" selected>Disabled</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="idUploads" class="form-label">ID Uploads <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="ID Uploads:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover"
+                      data-bs-content="Allow user to upload an ID photo instead of a live capture. We strongly recommend disabling photo uploads."></i>
+                  </label>
+                  <select class="form-select" id="idUploads" required>
+                    <option value="both">Enabled</option>
+                    <option value="camera" selected>Disabled</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <h4 class="mb-3">Other Settings</h4>
+
+                <div class="col-sm-6">
+                  <label for="barcode" class="form-label">Barcode Scan <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="Barcode:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover"
+                      data-bs-content="Force user to scan barcode on their ID. Strongly recommended for best results."></i>
+                  </label>
+                  <select class="form-select" id="barcode" required>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="crossCheck" class="form-label">Crosscheck <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="Crosscheck:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover" data-bs-content="Enable crosscheck."></i> </label>
+                  <select class="form-select" id="crossCheck" required>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled" selected>Disabled</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="darkWeb" class="form-label">DarkWeb <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="DarkWeb:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover" data-bs-content="Enable DarkWeb."></i> </label>
+                  <select class="form-select" id="darkWeb" required>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled" selected>Disabled</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="darkWeb" class="form-label">DLV <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="DLV:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover" data-bs-content="Enable Driver's License Validation."></i>
+                  </label>
+                  <select class="form-select" id="dlv" required>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled" selected>Disabled</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="aml" class="form-label">AML <i style="color:#635bff;" class="bi bi-question-circle-fill"
+                      data-bs-toggle="popover" data-bs-placement="top" data-bs-title="AML:" tabindex="0"
+                      data-bs-trigger="hover" data-bs-html="true" data-bs-custom-class="vouched-popover"
+                      data-bs-content="Enable Anti Money Laundering Scan."></i> </label>
+                  <select class="form-select" id="aml" required>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled" selected>Disabled</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 avantOnly" style="display:none;">
+                  <label for="userConf" class="form-label">User Confirmations <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="User Confirmations:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover"
+                      data-bs-content="Force user to confirm images and data before submitting. Only available with <strong>avant</strong> theme."></i></label>
+                  <select class="form-select" id="userConf" required>
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-sm-12">
+                  <label for="notes" class="form-label">Notes (optional) <i style="color:#635bff;"
+                      class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-placement="top"
+                      data-bs-title="Notes:" tabindex="0" data-bs-trigger="hover" data-bs-html="true"
+                      data-bs-custom-class="vouched-popover" data-bs-content="Any additional notes can go here."></i>
+                  </label>
+                  <textarea id="notes" class="form-control" id="notes" placeholder="" rows="3"></textarea>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+    </footer>
+  </div>
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/vouchedConfig.js"></script>
+</body>
+
+</html>
